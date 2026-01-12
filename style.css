@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+/* HERO BACKGROUND */
+.hero {
+    height: 100vh;
+    width: 100%;
+    background: url('https://assets.nflxext.com/ffe/siteui/vlv3/85f17b43-cbcd-4d4e-92f3-2ea08d19136b/5c72df58-66b4-4e4d-9bb6-f01f680ac2f3/IN-en-20240205-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.85),
+        rgba(0,0,0,0.4)
+    );
+}
+
+/* NAVBAR */
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.logo {
+    font-size: 42px;
+    font-weight: 900;
+    color: #e50914;
+    letter-spacing: 2px;
+}
+
+.signin-btn {
+    padding: 8px 20px;
+    background-color: #e50914;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* HERO CONTENT */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+}
+
+.hero-title {
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1.2;
+    text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.15);
+}
+
+.hero-subtitle {
+    font-size: 24px;
+    margin-top: 20px;
+    font-weight: 400;
+}
+
+.hero-desc {
+    font-size: 20px;
+    margin-top: 20px;
+    opacity: 0.9;
+}
+
+.input-box {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+input {
+    padding: 16px;
+    width: 350px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.get-started-btn {
+    padding: 16px 25px;
+    background-color: #e50914;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.get-started-btn:hover {
+    background-color: #f6121d;
+    transform: scale(1.05);
+}
+
+/* MOVIE CARDS SECTION */
+.movies-section {
+    padding: 60px;
+    background-color: #000;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+/* MOVIE GRID */
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+/* MOVIE CARD */
+.movie-card {
+    position: relative;
+    height: 260px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.movie-card img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.07);
+}
+
+.movie-card:hover img {
+    filter: brightness(60%);
+}
+
+/* OVERLAY TEXT */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to top, black, transparent);
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.movie-card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 36px;
+    }
+}
